@@ -1,0 +1,37 @@
+# Define o início dos serviços (containers) que farão parte deste ambiente
+services:
+
+  # Nome do serviço dentro do ecossistema do Docker Compose (pode ser qualquer nome)
+  db:
+
+    # Define a imagem oficial do MySQL que será baixada do Docker Hub (latest pega a versão mais recente)
+    image: mysql:latest
+
+    # Nome personalizado que o container terá ao rodar (facilita para identificá-lo com 'docker ps')
+    container_name: mysql_servidor
+
+    # Política de reinicialização: diz ao Docker para ligar o container de volta caso ele caia ou o PC reinicie
+    restart: always
+
+    # Seção para configurar as variáveis de ambiente necessárias para inicializar o MySQL
+    environment:
+      # Define a senha obrigatória do usuário administrador ('root') do banco de dados
+      MYSQL_ROOT_PASSWORD: minhasenha
+      
+      # Cria automaticamente um banco de dados com este nome assim que o container subir pela primeira vez
+      MYSQL_DATABASE: curso_sql
+
+    # Mapeamento de portas entre a sua máquina física e o container
+    ports:
+      # "Porta_Do_Seu_PC : Porta_Dentro_Do_Container". A porta 3306 é o padrão do MySQL
+      - "3306:3306"
+
+    # Seção de volumes usada para garantir a persistência dos dados (não perder nada ao desligar)
+    volumes:
+      # Vincula o volume virtual 'mysql_dados' à pasta onde o MySQL guarda as tabelas dentro do container
+      - mysql_dados:/var/lib/mysql
+
+# Declaração global dos volumes utilizados no arquivo
+volumes:
+  # Cria o volume virtual gerenciado pelo Docker que foi citado lá em cima na linha do serviço
+  mysql_dados:
