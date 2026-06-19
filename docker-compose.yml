@@ -19,7 +19,7 @@ services:
       MYSQL_ROOT_PASSWORD: minhasenha
       
       # Cria automaticamente um banco de dados com este nome assim que o container subir pela primeira vez
-      MYSQL_DATABASE: curso_sql
+      # MYSQL_DATABASE: curso_sql
 
     # Mapeamento de portas entre a sua máquina física e o container
     ports:
