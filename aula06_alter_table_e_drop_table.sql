@@ -39,4 +39,6 @@ CREATE TABLE IF NOT EXISTS cursos (
 ) DEFAULT CHARSET= utf8mb4
 
 
-ALTER TABLE cursos ADD COLUMN idcursos INT PRIMARY KEY first
+ALTER TABLE cursos ADD COLUMN idcursos INT PRIMARY KEY first;
+
+DESC cursos;

@@ -1,8 +1,8 @@
 # Apagando um banco de dados
 DROP DATABASE curso_sql;
 
-# Apagando tabela
-DROP TABLE pessoas
+#Verifica se a tabela existi e depois apaga
+DROP TABLE IF EXISTS pessoas
 
 # Criando um banco de dados adicionando constraints
 # 

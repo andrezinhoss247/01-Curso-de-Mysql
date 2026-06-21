@@ -35,6 +35,7 @@ CREATE TABLE pessoas(
 
 # Descrevendo uma tablea
 DESCRIBE pessoas;
+DESC pessoas
 
 # Mostrando os bancos de dados
 SHOW DATABASES;
