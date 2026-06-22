@@ -4,7 +4,7 @@
 ALTER TABLE pessoas ADD COLUMN profissao varchar(20);
 
 # Apagando uma coluna
-ALTER TABLE pessoas DROP COLUMN profissao;
+ALTER TABLE gafanhotos DROP COLUMN profissao;
 
 
 # Adicionando nova coluna depois do campo 'after nome' da tabela

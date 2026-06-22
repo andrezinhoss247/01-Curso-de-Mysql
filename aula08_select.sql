@@ -24,7 +24,21 @@ WHERE ano > '2016' AND ano < 2021
 ORDER BY nome;
 
 
-# Selecionando ano entre(between) 2014 e(and) 2016 aqui entra os ano 2014 e 2016
+# Selecionando linhas com condiçoes 
+SELECT ano, carga FROM cursos 
+WHERE ano > '2016' OR carga < 50
+ORDER BY ano;
+
+
+# Selecionando ano entre(between) 2014 e(and) 2016 
 SELECT * FROM cursos 
 WHERE  ano BETWEEN '2014' AND '2021'
+ORDER BY nome;
+
+
+
+# Selecionando ano em (2025, 2024, 2023)
+# Exibi somente esses anos
+SELECT * FROM cursos 
+WHERE  ano IN (2025, 2024, 2023)
 ORDER BY nome;
